@@ -1,12 +1,6 @@
 cmake_minimum_required(VERSION 3.2)
 
-#if(DEFINED $ENV{TRAVIS_BUILD_NUMBER})
-
-	project(helloworld VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
-	
-#else()
-	#project(helloworld VERSION 0.0.1)
-#endif()
+project(helloworld VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
 
 configure_file(version.h.in version.h)
 
@@ -23,6 +17,8 @@ set_target_properties(helloworld_cli helloworld test_version PROPERTIES
     CXX_STANDARD_REQUIRED ON
     COMPILE_OPTIONS "-Wpedantic;-Wall;-Wextra"
 )
+
+include_directories(${PROJECT_BINARY_DIR})
 
 target_link_libraries(helloworld_cli
     helloworld
