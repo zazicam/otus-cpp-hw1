@@ -1,4 +1,4 @@
-#include <gtest/gtest.h>
+#include "gtest/gtest.h"
 #include "lib.h"
 
 TEST(version_tests, test1)
