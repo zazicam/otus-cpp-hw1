@@ -1,14 +1,8 @@
-#define BOOST_TEST_MODULE test_version
-
+#include <gtest/gtest.h>
 #include "lib.h"
 
-#include <boost/test/unit_test.hpp>
-
-BOOST_AUTO_TEST_SUITE(test_version)
-
-BOOST_AUTO_TEST_CASE(test_valid_version)
+TEST(version_tests, test1)
 {
-    BOOST_CHECK(version() > 0);
+	ASSERT_TRUE(version()>0);
 }
 
-}
